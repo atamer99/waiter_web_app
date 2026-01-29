@@ -55,7 +55,7 @@ export function ReceiptView({ tableId, items, total, tip }: ReceiptViewProps) {
                                     {count}×
                                 </span>
 
-                                <span className="truncate text-2xl leading-snug font-medium">
+                                <span className="text-2xl leading-snug font-medium break-words text-left">
                                     {name}
                                 </span>
                             </div>
