@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Dark Theme */
+  --background: #121212;
+  --foreground: #ededed;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+
+  /* Accents */
+  --primary: #ffffff;
+  --secondary: #a0a0a0;
+  --accent: #d35400;
+  --success: #27ae60;
+  --danger: #ef4444;
+
+  --glass-bg: rgba(30, 30, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --radius: 12px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  --color-glass: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+
+  --font-sans: 'Outfit', 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Fallback Utility Classes (Safety) */
+.bg-card {
+  background-color: var(--card-bg);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* FINAL PRINT FIX */
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+    /* Allow printer to define size (works better for both A4 and Thermal) */
+  }
+
+  body {
+    background: white !important;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* Center content vertically and horizontally if needed, or just flow */
+  }
+
+  /* Hide UI */
+  body * {
+    visibility: hidden;
+  }
+
+  header,
+  main,
+  .fixed,
+  .bg-background {
+    display: none !important;
+  }
+
+  /* Show Receipt */
+  #receipt-print-area,
+  #receipt-print-area * {
+    visibility: visible !important;
+    color: black !important;
+  }
+
+  #receipt-print-area {
+    display: block !important;
+    position: relative;
+    /* Allow flow */
+    left: auto;
+    top: auto;
+    width: 80mm;
+    /* Standard Receipt Width */
+    max-width: 100%;
+    margin: 20mm auto;
+    /* Center horizontally with some top margin */
+    background: white !important;
+    padding: 5px;
+    z-index: 99999;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+  }
 }
