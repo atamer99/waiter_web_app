@@ -36,13 +36,13 @@ export function CartSection({
                     </div>
                 ) : (
                     items.map((item, idx) => (
-                        <div key={idx} className="flex justify-between items-center py-4 border-b border-white/5 last:border-0 text-lg group">
+                        <div key={idx} className="flex justify-between items-center py-5 border-b border-white/5 last:border-0 text-xl group font-sans">
                             <span className="flex-1 truncate pr-2 text-white font-bold">{item.name}</span>
                             <div className="flex items-center gap-4">
-                                <span className="font-bold text-accent text-lg">{item.price.toFixed(2)}</span>
+                                <span className="font-bold text-accent text-xl">{item.price.toFixed(2)}</span>
                                 <button
                                     onClick={() => onRemoveItem(idx)}
-                                    className="bg-red-500/20 text-red-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors active:scale-95"
+                                    className="bg-red-500/20 text-red-500 rounded-full w-12 h-12 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors active:scale-95"
                                 >
                                     &times;
                                 </button>

@@ -56,7 +56,7 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         key={cat}
                         onClick={() => setActiveCategory(cat)}
                         className={`
-              px-5 py-3 rounded-xl text-base font-bold transition-all border
+              px-5 py-3 rounded-xl text-base sm:text-lg font-bold transition-all border
               ${activeCategory === cat
                                 ? (CATEGORY_COLORS[cat] || 'bg-white text-black border-white')
                                 : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}
@@ -75,8 +75,8 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         onClick={() => handleItemClick(item)}
                         className="bg-card border border-white/5 hover:border-white/20 rounded-xl p-3 flex flex-col justify-between items-center shadow-lg min-h-[90px] active:bg-white/5 active:scale-95 transition-all text-center group"
                     >
-                        <span className="text-xl font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-2 uppercase">{item.name}</span>
-                        <span className="text-accent font-black text-2xl mt-2">
+                        <span className="text-lg sm:text-xl font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-3 uppercase tracking-wide font-sans">{item.name}</span>
+                        <span className="text-accent font-black text-xl sm:text-2xl mt-2 font-sans">
                             {item.price ? `${item.price.toFixed(2)} €` : '...'}
                         </span>
                     </button>
