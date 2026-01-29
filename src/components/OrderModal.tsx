@@ -69,7 +69,7 @@ export function OrderModal({
                 </div>
 
                 {/* Cart (Bottom on Mobile, Right on Desktop) */}
-                <div className="h-[40%] md:h-full md:w-[400px] md:border-l border-white/10 bg-card z-20 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+                <div className="h-[50%] md:h-full md:w-[400px] border-t md:border-t-0 md:border-l border-white/10 bg-card z-20 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
                     <CartSection
                         tableId={tableId}
                         items={items}

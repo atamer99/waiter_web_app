@@ -33,7 +33,7 @@
   --color-glass: var(--glass-bg);
   --color-glass-border: var(--glass-border);
 
-  --font-sans: 'Outfit', 'Segoe UI', sans-serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Courier New', monospace;
 }
 

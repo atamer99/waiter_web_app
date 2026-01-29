@@ -56,7 +56,7 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         key={cat}
                         onClick={() => setActiveCategory(cat)}
                         className={`
-              px-8 py-6 rounded-2xl text-2xl font-bold transition-all border
+              px-5 py-3 rounded-xl text-base font-bold transition-all border
               ${activeCategory === cat
                                 ? (CATEGORY_COLORS[cat] || 'bg-white text-black border-white')
                                 : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}
@@ -68,15 +68,15 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
             </div>
 
             {/* Items Grid */}
-            <div className="flex-1 overflow-y-auto p-3 grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-3 content-start custom-scrollbar">
+            <div className="flex-1 overflow-y-auto p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 content-start custom-scrollbar">
                 {STATIC_DATA[activeCategory]?.map((item, idx) => (
                     <button
                         key={idx}
                         onClick={() => handleItemClick(item)}
                         className="bg-card border border-white/5 hover:border-white/20 rounded-xl p-3 flex flex-col justify-between items-center shadow-lg min-h-[90px] active:bg-white/5 active:scale-95 transition-all text-center group"
                     >
-                        <span className="text-3xl font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-3">{item.name}</span>
-                        <span className="text-accent font-black text-3xl mt-4">
+                        <span className="text-xl font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-2 uppercase">{item.name}</span>
+                        <span className="text-accent font-black text-2xl mt-2">
                             {item.price ? `${item.price.toFixed(2)} €` : '...'}
                         </span>
                     </button>
