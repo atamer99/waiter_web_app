@@ -44,11 +44,11 @@ export function ReceiptView({ tableId, items, total, tip }: ReceiptViewProps) {
             {/* Items Grouped by Category */}
             <div className="text-sm mb-4 border-b border-black pb-4">
                 {Object.entries(groupedItems).map(([category, itemsMap]) => (
-                    <div key={category} className="mb-3">
-                        <div className="font-bold underline mb-1 uppercase text-xs">{category}</div>
+                    <div key={category} className="mb-4">
+                        <div className="font-bold underline mb-2 uppercase text-2xl">{category}</div>
                         {Object.entries(itemsMap).map(([name, count]) => (
                             <div key={name} className="flex justify-between mb-1 pl-2">
-                                <span className="truncate pr-2">{count} x {name}</span>
+                                <span className="truncate pr-2 text-xl font-bold text-left">{count} x {name}</span>
                             </div>
                         ))}
                     </div>
