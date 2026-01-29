@@ -4,7 +4,7 @@ export const TOTAL_TABLES = 22;
 export const STORAGE_KEY = 'lebaron_pos_v2_store';
 
 const menuJson = {
-    "Pizza Rossa": [
+    "Rossa Pizza": [
         {
             "name": "Mariana",
             "price": 8.00,
@@ -96,7 +96,7 @@ const menuJson = {
             "allergens": "G"
         }
     ],
-    "Pizza Bianca": [
+    "Bianca Pizza": [
         {
             "name": "PANCETTA E FUNGHI",
             "price": 12.50,
@@ -128,7 +128,7 @@ const menuJson = {
             "allergens": "A, G"
         }
     ],
-    "Pizza dolce": [
+    "Dolce Pizza": [
         {
             "name": "Nutella pizza",
             "price": 14.50,

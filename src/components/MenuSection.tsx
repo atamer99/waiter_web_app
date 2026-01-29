@@ -9,9 +9,9 @@ interface MenuSectionProps {
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-    "Pizza Rossa": "bg-red-600/20 text-red-500 border-red-500/50",
-    "Pizza Bianca": "bg-yellow-100/10 text-yellow-200 border-yellow-200/30",
-    "Pizza dolce": "bg-pink-400/20 text-pink-400 border-pink-400/50",
+    "Rossa Pizza": "bg-red-600/20 text-red-500 border-red-500/50",
+    "Bianca Pizza": "bg-yellow-100/10 text-yellow-200 border-yellow-200/30",
+    "Dolce Pizza": "bg-pink-400/20 text-pink-400 border-pink-400/50",
     "Kinder": "bg-blue-400/20 text-blue-400 border-blue-400/50",
     "Pane": "bg-amber-700/20 text-amber-600 border-amber-600/50",
     "Antipasti": "bg-purple-500/20 text-purple-400 border-purple-400/50",
@@ -56,7 +56,7 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         key={cat}
                         onClick={() => setActiveCategory(cat)}
                         className={`
-              px-5 py-2.5 rounded-xl text-sm font-bold transition-all border
+              px-6 py-4 rounded-xl text-lg font-bold transition-all border
               ${activeCategory === cat
                                 ? (CATEGORY_COLORS[cat] || 'bg-white text-black border-white')
                                 : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}
@@ -75,8 +75,8 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         onClick={() => handleItemClick(item)}
                         className="bg-card border border-white/5 hover:border-white/20 rounded-xl p-3 flex flex-col justify-between items-center shadow-lg min-h-[90px] active:bg-white/5 active:scale-95 transition-all text-center group"
                     >
-                        <span className="text-xs font-medium text-gray-300 group-hover:text-white leading-tight line-clamp-2">{item.name}</span>
-                        <span className="text-accent font-bold text-sm mt-2">
+                        <span className="text-lg font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-2">{item.name}</span>
+                        <span className="text-accent font-black text-xl mt-2">
                             {item.price ? `${item.price.toFixed(2)} €` : '...'}
                         </span>
                     </button>
