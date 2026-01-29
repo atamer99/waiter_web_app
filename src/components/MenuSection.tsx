@@ -76,7 +76,7 @@ export function MenuSection({ onAddItem }: MenuSectionProps) {
                         className="bg-card border border-white/5 hover:border-white/20 rounded-xl p-3 flex flex-col justify-between items-center shadow-lg min-h-[90px] active:bg-white/5 active:scale-95 transition-all text-center group"
                     >
                         <span className="text-lg sm:text-xl font-bold text-gray-200 group-hover:text-white leading-tight line-clamp-3 uppercase tracking-wide font-sans">{item.name}</span>
-                        <span className="text-accent font-black text-xl sm:text-2xl mt-2 font-sans">
+                        <span className="text-accent font-black text-xl sm:text-xl mt-2 font-sans">
                             {item.price ? `${item.price.toFixed(2)} €` : '...'}
                         </span>
                     </button>
