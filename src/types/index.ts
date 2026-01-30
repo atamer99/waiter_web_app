@@ -6,16 +6,12 @@ export interface MenuItem {
     id: string;
     name: string;
     nameEn?: string;
-    description?: string;
-    descriptionEn?: string;
     category: string;
     price?: number;
     variants?: Record<string, number>;
     imageUrl?: string;
     available: boolean;
     url?: string;
-    allergens?: string;
-    ingredients?: string;
 }
 
 export interface MenuData {
